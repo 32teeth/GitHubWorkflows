@@ -3,4 +3,4 @@
 
 [![Check](https://github.com/32teeth/GitHubWorkflows/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/32teeth/GitHubWorkflows/actions/workflows/check.yml)
 
-[![Pre Flight](https://img.shields.io/github/workflow/status/32teeth/GitHubWorkflows/pre-flight/main?style=for-the-badge)](https://github.com/32teeth/GitHubWorkflows/actions/workflows/pre-flight.yml)
+![Pre Flight](https://img.shields.io/github/actions/workflow/status/32teeth/GitHubWorkflows/pre-flight?style=for-the-badge&logo=espressif&label=pre%20flight&link=https%3A%2F%2Fgithub.com%2F32teeth%2FGitHubWorkflows%2Factions%2Fworkflows%2Fpre-flight.yml)
