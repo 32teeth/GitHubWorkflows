@@ -4,7 +4,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: preflight
     steps:
     - name: Step 1
       run: |
