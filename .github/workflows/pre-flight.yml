@@ -2,37 +2,37 @@ name: Pre Flight
 
 on: [push]
 jobs:
-  build:
+  preflight:
     runs-on: ubuntu-latest
     environment: preflight
     steps:
-    - name: Step 1
+    - name: Pre Flight Step 1
       run: |
-        echo 'Step 1 complete'
+        echo 'Pre Flight Step 1 complete'
         sleep 5
 
-    - name: Step 2
+    - name: Pre Flight Step 2
       run: |
-        echo 'Step 2 complete'
+        echo 'Pre Flight Step 2 complete'
         sleep 5
 
-    - name: Step 3
+    - name: Pre Flight Step 3
       run: |
-        echo 'Step 3 complete'
+        echo 'Pre Flight Step 3 complete'
         sleep 5
 
-    - name: Step 4
+    - name: Pre Flight Step 4
       run: |
-        echo 'Step 4 complete'
+        echo 'Pre Flight Step 4 complete'
         sleep 5
 
-    - name: Step 5
+    - name: Pre Flight Step 5
       run: |
-        echo 'Step 5 complete'
+        echo 'Pre Flight Step 5 complete'
         sleep 5
 
-    - name: Step 6
+    - name: Pre Flight Step 6
       run: |
-        echo 'Step 6 complete'
+        echo 'Pre Flight Step 6 complete'
         sleep 5
 
