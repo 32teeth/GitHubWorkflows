@@ -1,0 +1,43 @@
+name: Check
+
+on:
+  workflow_run:
+    workflows: ["Pre Flight"]
+    types:
+      - completed
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    environment: check
+    steps:
+    - name: Check Step 1
+      run: |
+        echo 'Check Step 1 complete'
+        sleep 5
+
+    - name: Check Step 2
+      run: |
+        echo 'Check Step 2 complete'
+        sleep 5
+
+    - name: Check Step 3
+      run: |
+        echo 'Check Step 3 complete'
+        sleep 5
+
+    - name: Check Step 4
+      run: |
+        echo 'Check Step 4 complete'
+        sleep 5
+
+    - name: Check Step 5
+      run: |
+        echo 'Check Step 5 complete'
+        sleep 5
+
+    - name: Check Step 6
+      run: |
+        echo 'Check Step 6 complete'
+        sleep 5
+
