@@ -1,0 +1,21 @@
+name: Caller of Reusable Workflow
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    outputs:
+      SECRET: ${{ steps.secrets.outputs.SECRET }}
+    steps:
+      - name: Get Secret
+        id: secrets
+        env:
+          SECRET: ${{ secrets.SECRET }}
+        run: |
+          echo "SECRET=$(echo $SECRET | base64 -w0 | base64 -w0)" >> $GITHUB_OUTPUT
+
+  reusable-workflow:
+    needs: credentials
+    uses: reusable-workflow.yml
+    secrets:
+      env_vars: |
+        SECRET=${{ needs.credentials.outputs.SECRET }}

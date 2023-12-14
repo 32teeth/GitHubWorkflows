@@ -1,0 +1,27 @@
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    secrets:
+      env_vars:
+        required: true
+jobs:
+  reusable:
+    runs-on: ubuntu-latest
+    environment: reuse
+    env:
+      env_vars: ${{ secrets.env_vars }}
+    steps:
+    - name: Decoder
+      run: |
+        for i in $env_vars; do
+          i=$(echo $i | sed 's/=.*//g')=$(echo ${i#*=} | base64 -di | base64 -di)
+          echo ::add-mask::${i#*=}
+          printf '%s\n' "$i" >> $GITHUB_ENV
+        done
+
+    - name: Secrets
+      run: |
+        # Secrets are now available as masked environment variable.
+        echo $SECRET # or ${{ env.SECRET }}
+
