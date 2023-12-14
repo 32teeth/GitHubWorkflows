@@ -1,21 +1,25 @@
-name: Caller of Reusable Workflow
+# caller-workflow.yml
 
 jobs:
-  secrets:
+  credentials:
     runs-on: ubuntu-latest
     outputs:
-      SECRET: ${{ steps.secrets.outputs.SECRET }}
+      CREDENTIAL1: ${{ steps.credentials.outputs.CREDENTIAL1 }}
+      CREDENTIAL2: ${{ steps.credentials.outputs.CREDENTIAL2 }}
     steps:
-      - name: Get Secret
-        id: secrets
+      - name: Output encoded credentials
+        id: credentials
         env:
-          SECRET: ${{ secrets.SECRET }}
+          CREDENTIAL1: ${{ secrets.CREDENTIAL1 }}
+          CREDENTIAL2: ${{ secrets.CREDENTIAL2 }}
         run: |
-          echo "SECRET=$(echo $SECRET | base64 -w0 | base64 -w0)" >> $GITHUB_OUTPUT
+          echo "CREDENTIAL1=$(echo $CREDENTIAL1 | base64 -w0 | base64 -w0)" >> $GITHUB_OUTPUT
+          echo "CREDENTIAL2=$(echo $CREDENTIAL2 | base64 -w0 | base64 -w0)" >> $GITHUB_OUTPUT
 
   reusable-workflow:
     needs: credentials
     uses: reusable-workflow.yml
     secrets:
       env_vars: |
-        SECRET=${{ needs.credentials.outputs.SECRET }}
+        CREDENTIAL1=${{ needs.credentials.outputs.CREDENTIAL1 }}
+        CREDENTIAL2=${{ needs.credentials.outputs.CREDENTIAL2 }}
