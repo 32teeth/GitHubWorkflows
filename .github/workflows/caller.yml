@@ -1,5 +1,4 @@
-# caller-workflow.yml
-
+name: Caller Workflow
 jobs:
   credentials:
     runs-on: ubuntu-latest
