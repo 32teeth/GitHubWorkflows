@@ -1,4 +1,5 @@
-
+# Add step view to your workflow
+<img width="266" alt="Screenshot 2024-05-13 at 4 53 45 PM" src="https://github.com/32teeth/GitHubWorkflows/assets/75797/10c8916b-2b7c-4cda-93da-c45c0e215f94">
 
 
 
