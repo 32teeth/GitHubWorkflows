@@ -1,5 +1,4 @@
-# reusable-workflow.yml
-
+name: Reusable Workflow
 on:
   workflow_call:
     secrets:
